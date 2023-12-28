@@ -235,6 +235,15 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array.
     }
+    // Lấy 1 sản phẩm theo id
+    public function getProductById($id)
+    {
+        // 2. Tạo câu SQL
+        $sql = parent::$connection->prepare('SELECT * FROM `products` WHERE `id`=?');
+        $sql->bind_param('i', $id);
+        return parent::select($sql)[0];
+    }
+   
 
     /**____________________________________________________________________________________________________
      * lấy sản phâmr theo nhiều id:

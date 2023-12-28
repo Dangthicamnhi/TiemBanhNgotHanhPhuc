@@ -107,9 +107,33 @@ $user = new User;
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+
+<!-- sự kiện click vào hình ảnh hiện chi tiết  -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var cakeImages = document.getElementsByClassName("cake_img");
+
+            for (var i = 0; i < cakeImages.length; i++) {
+                cakeImages[i].addEventListener("click", function () {
+                    var productId = this.getAttribute("data-product-id");
+                    // var imagePath = this.querySelector("img").getAttribute("src");
+                    window.location.href = "product.php?id=" + productId;
+                    // window.location.href = "product.php?image=" + encodeURIComponent(imagePath);
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
+
+
+
+
+
+
+
     <button onclick="topFunction()" id="myBtn" title="Go to top">
         <h3><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></h3>
     </button>

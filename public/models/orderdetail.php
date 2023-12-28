@@ -47,8 +47,12 @@ class OrderDetail extends Db
 
     static function removeProduct_ById($orderId, $productId)
     {
-        $sql = self::$connection->prepare("DELETE FROM ordersdetail WHERE productid = $productId AND orderid = $orderId");
-        return $sql->execute();
+
+        $sql = self::$connection->prepare("DELETE FROM ordersdetail WHERE productid = ? AND orderid = ?");
+    $sql->bind_param('ii', $productId, $orderId);
+    return $sql->execute();
+        // $sql = self::$connection->prepare("DELETE FROM ordersdetail WHERE productid = $productId AND orderid = $orderId");
+        // return $sql->execute();
     }
 
     static function removeAll()
