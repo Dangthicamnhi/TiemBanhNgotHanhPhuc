@@ -17,6 +17,9 @@ $order = new Order;
 $orderDetail = new OrderDetail;
 $user = new User;
 
+
+
+
 if (isset($_SESSION['isLogin']['User'])) {
     $userLogin = $_SESSION['isLogin']['User'];
     if (isset($_GET['id'])) {
@@ -70,7 +73,13 @@ if (isset($_SESSION['isLogin']['User'])) {
             if (count($getOrder_Product) == 0) {
                 $totalPrice = $number_Quantity * $product['price'];
                 $newOrder = OrderDetail::insertOrder($orderId, $id, $number_Quantity, $totalPrice);
-                echo "1";
+                 echo "1";
+                  // Hiển thị thông báo nếu không có sản phẩm nào trong giỏ hàng
+                  if ($newOrder) {
+                    $_SESSION['paymentNotification'] = "Vui lòng thêm hàng vào giỏ hàng trước khi thanh toán!";
+                    header('location:' . $_SERVER['HTTP_REFERER']);
+                    exit();
+                }
             } else {
                 $oldPrice = $getOrder_Product[0]['price'];
                 $oldQuantity = $getOrder_Product[0]['quantity'];

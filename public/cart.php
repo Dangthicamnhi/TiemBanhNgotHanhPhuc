@@ -123,11 +123,21 @@ $productModel = new product();
                     <?php
                          } } }else {
                                 echo "<h2 style='text-align: center;'><i>
-                                <a href='./cake.php'>SHOPPING NOW !!!</a>
+                                <a href='./cake.php'>You need to shop now!!!</a>
                                 </i></h2>";
                             }
                     ?>
                      
+
+                     <?php
+            if (isset($_SESSION['paymentNotification'])) {
+             echo '<div id="paymentNotification" style="display: block; text-align: center; margin-top: 10px;">
+             <p>' . $_SESSION['paymentNotification'] . '</p>
+          </div>';
+              unset($_SESSION['paymentNotification']);
+            }
+                ?>
+
                     </tbody>
                 </table>
             </div>
@@ -144,8 +154,16 @@ $productModel = new product();
                                         ?>
                                         VND</span></strong></h4>
                         </div>
+                        <div>
+                        <a class="pest_btn" href="#" id="paymentButton">Thanh Toán</a>
+                        </div>
+                        <div id="paymentNotification" style="display: none;">
+                         <p>Thanh toán thành công!</p>
+
+                        </div>
                         <div class="cart_footer">
                             <a class="pest_btn" href="./cake.php">Shopping</a>
+                         
                             <a class="pest_btn" href="add-cart.php">Remove All</a>
                         </div>
                     </div>
@@ -161,3 +179,20 @@ $productModel = new product();
 <!--================End Cart Table Area =================-->
 
 <?php require_once 'contact.php' ?>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var paymentButton = document.getElementById("paymentButton");
+
+        paymentButton.addEventListener("click", function (event) {
+            event.preventDefault(); 
+
+            //  thông báo
+            alert("Thanh toán thành công");
+            // Xóa hàng hóa khỏi giỏ hàng
+            window.location.href = "add-cart.php?clear=true";
+            
+        });
+    });
+</script>
