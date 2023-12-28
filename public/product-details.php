@@ -1,20 +1,20 @@
 <?php
 session_start();   
- // Tạo mảng recentView lưu vào cookie
- $recentView = [];
- if (isset($_COOKIE['recentView'])) {
-     $recentView = json_decode($_COOKIE['recentView']);
-     if (!in_array($id, $recentView)) {
-         if (count($recentView) == 5) {
-             array_shift($recentView);
-         }
-         array_push($recentView, $id);
-     }
- }
- else {
-     array_push($recentView, $id);
- }
- setcookie('recentView', json_encode($recentView), time() + 3600*24);
+//  // Tạo mảng recentView lưu vào cookie
+//  $recentView = [];
+//  if (isset($_COOKIE['recentView'])) {
+//      $recentView = json_decode($_COOKIE['recentView']);
+//      if (!in_array($id, $recentView)) {
+//          if (count($recentView) == 5) {
+//              array_shift($recentView);
+//          }
+//          array_push($recentView, $id);
+//      }
+//  }
+//  else {
+//      array_push($recentView, $id);
+//  }
+//  setcookie('recentView', json_encode($recentView), time() + 3600*24);
 
  
 if (!isset($_SESSION['isLogin']['User'])) {

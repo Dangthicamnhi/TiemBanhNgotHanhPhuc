@@ -7,17 +7,18 @@ include_once "../models/order.php";
 
 $rememberSuccess = false;// Biến để theo dõi trạng thái ghi nhớ
 
-// Kiểm tra cookies và thực hiện đăng nhập tự động
-if(isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
-    $getUserLogin = User::getUserLogin($_COOKIE['username'], 'User');
-    if (count($getUserLogin) != 0) {
-        if ($getUserLogin[0]['password'] == md5($_COOKIE['password'])) {
-            $_SESSION['isLogin']["User"] = $getUserLogin[0]['id'];
-            header('location:../index.php');
-            exit(); // Kết thúc kịch bản nếu đăng nhập tự động thành công
-        }
-    }
-}
+// // Kiểm tra cookies và thực hiện đăng nhập tự động
+// if(isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+//     $getUserLogin = User::getUserLogin($_COOKIE['username'], 'User');
+//     if (count($getUserLogin) != 0) {
+//         if ($getUserLogin[0]['password'] == md5($_COOKIE['password'])) {
+//             $_SESSION['isLogin']["User"] = $getUserLogin[0]['id'];
+//             header('location:../index.php');
+//             exit(); // Kết thúc kịch bản nếu đăng nhập tự động thành công
+//         }
+//     }
+// }
+
 $userInfo = new User();
 $flag = true;
 

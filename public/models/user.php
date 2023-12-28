@@ -1,5 +1,12 @@
 <?php
 class User extends Db {
+    
+    public function __construct()
+    {
+        // Gọi hàm tạo của lớp cơ sở dữ liệu để khởi tạo kết nối.
+        parent::__construct();
+    }
+
     //LOGIN.
     public function login($username) {
         $sql = self::$connection->prepare("SELECT * FROM users where username = ? ");

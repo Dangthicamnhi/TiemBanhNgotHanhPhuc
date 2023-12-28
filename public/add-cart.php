@@ -66,7 +66,7 @@ if (isset($_SESSION['isLogin']['User'])) {
                 $number_Quantity = $_GET['quantity'];
             }
             $getOrder_Product = OrderDetail::getOrder_Product($id, $orderId);
-            var_dump($getOrder_Product);
+            // var_dump($getOrder_Product);
             if (count($getOrder_Product) == 0) {
                 $totalPrice = $number_Quantity * $product['price'];
                 $newOrder = OrderDetail::insertOrder($orderId, $id, $number_Quantity, $totalPrice);

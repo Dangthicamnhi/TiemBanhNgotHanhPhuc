@@ -19,7 +19,7 @@ $productModel = new product();
         </div>
     </div>
 </section>
-<div class="card" style="width: 18rem;">
+<!-- <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">Sản phẩm vừa xem</h5>
         <ul>
@@ -32,7 +32,7 @@ $productModel = new product();
             ?>
         </ul>
     </div>
-</div>
+</div> -->
 <!--================End Main Header Area =================-->
 
 <!--================Cart Table Area =================-->
