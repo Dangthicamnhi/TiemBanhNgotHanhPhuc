@@ -21,7 +21,7 @@ if (isset($_SESSION['isLogin']['User'])) {
     $userLogin = $_SESSION['isLogin']['User'];
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $orderId = Order::getOrder_ByCustomerId($userLogin)[0]['id'];
+        $orderId = Order::getOrder_ByCustomerId($id);
         $product = Product::getProduct_ByID($id);
         if ($id[0] == 'r' || $id[0] == 'p' || $id[0] == 'm') {
             $newId = substr($id, 1, strlen($id));

@@ -41,7 +41,7 @@ $productModel = new product();
     if (isset($_SESSION['isLogin']['User'])) {
         $totalPrice = 0;
         $idUserLogin = $_SESSION['isLogin']['User'];
-        $idOrder = Order::getOrder_ByCustomerId($idUserLogin)[0]['id'];
+        $idOrder = Order::getOrder_ByCustomerId($idUserLogin);
         $orderDetail = OrderDetail::getOrder_ByOrderId($idOrder);
 
     ?>
