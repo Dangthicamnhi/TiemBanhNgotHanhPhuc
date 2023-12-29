@@ -32,7 +32,7 @@ $template->view('layout', $data);
 </head>
 <body>
     
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md">
             <img src="public/images/<?php echo $product['image'] ?>" alt="" class="img-fluid">
@@ -48,7 +48,8 @@ $template->view('layout', $data);
                 <a href="#" class="btn btn-outline-primary">Thêm vào giỏ</a>
             </div>
         </div>
-    </div>
+    </div> -->
+    cứu mấy ní ơi
 </div>
 </body>
 </html>

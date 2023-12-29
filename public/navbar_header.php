@@ -110,7 +110,7 @@ $user = new User;
 
 
 <!-- sự kiện click vào hình ảnh hiện chi tiết  -->
-        <script>
+        <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             var cakeImages = document.getElementsByClassName("cake_img");
 
@@ -123,7 +123,7 @@ $user = new User;
                 });
             }
         });
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -178,6 +178,7 @@ $user = new User;
                             </li>
                             <li><a href="cake.php">Our Cakes</a></li>
                             <li><a href="product-details.php">Detail</a></li>
+                            <li><a href="review.php">Review</a></li>
                             </li>
                         </ul>
                         <ul class="navbar-nav justify-content-end">
