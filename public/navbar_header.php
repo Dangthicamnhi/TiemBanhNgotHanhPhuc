@@ -178,7 +178,7 @@ $user = new User;
                             </li>
                             <li><a href="cake.php">Our Cakes</a></li>
                             <li><a href="product-details.php">Detail</a></li>
-                            <li><a href="review.php">Review</a></li>
+                           
                             </li>
                         </ul>
                         <ul class="navbar-nav justify-content-end">
